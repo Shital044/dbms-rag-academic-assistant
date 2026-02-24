@@ -1,0 +1,111 @@
+No,Question,Answer
+1,What is normalization?,"The context provided in the given instruction does not include detailed explanations or step-by-step reasoning for ""normalization."" The guidelines of ""normalization,"" as mentioned in the material, refer to a process called Decompposition process or ""Noormalization."" In other words, normalization is a process of designing the schema in an appropriate normal form based on minimizing redundancy, removing anomalies for database activity, and eliminating data redundancy. Normal forms are functional dependencies that eliminate duplication and ensure minimal data redundancy. The given instruction does not provide any further explanation or step-by-step reasoning about ""normalization."""
+2,Explain ACID properties.,"1. Definition: The four ACID properties are Atomicity, Consistency, Isolation, and Durability.
+
+2. Detailed Explanation: Atomicity ensures that all operations in a transaction (e.g., write, read) performed by a single thread on the same data in a database will be executed as part of a single atomic operation. This means that any changes made to the database in one transaction will be applied to the database in another transaction, without any intervening steps or other operations being executed.
+
+3. Examples: A transaction can consist of multiple writes, such as updating an employee's salary and depositing a check. In this case, the atomicity property ensures that all operations are performed in one single atomic operation to ensure that the final result is consistent across all transactions.
+
+4. Property 1: Reads from the database will return consistent results regardless of the order in which reads were performed. This means that even if multiple threads perform a read operation before a write, the results should be consistent, and the database will only have one version of the data, no matter how many writes are being made simultaneously.
+
+5. Property 2: Writes to the database will be executed in a single atomic operation (read and modify), ensuring that the changes are applied to the database as a single unit. This means that if a write is interrupted (e.g., due to a network error or system interruption) before the write can be completed, the transaction will still successfully complete with the correct result.
+
+6. Property 3: Transactions must hold at least one read operation and one write operation, to ensure consistency across all writes made in that transaction. This means that if multiple reads are being performed concurrently, they must all return consistent results.
+
+7. Property 4: The database can only support transactions with these four ACID properties (atomicity, consistency, isolation, and durability), as each property is mutually exclusive and cannot be combined with the others. This ensures that a transaction will only succeed if it meets all of the four ACID properties in order.
+
+Conclusion: The four ACID properties are critical for maintaining the integrity and consistency of a database, making it possible to trust the data that is stored within it. By following these principles, developers can build robust and reliable databases that can withstand any interruptions or errors that may occur during transactions."
+3,What is transaction?,"To answer the question ""What is a Transaction?"", we need to first define the concept of a transaction, as it plays a crucial role in database management systems (DBMS). In a DBMS, a transaction is an event that occurs on the database. A transaction may consist of several operations such as reading or writing a value in the database.
+
+A transaction can be either read-only (non-transactional) or read-write (transactional). When a transaction is started, it has a default level of isolation - SERIALIZABLE. This means that the database will be locked during the entire duration of the transaction and all writes made by other transactions are protected from being executed until the transaction is complete.
+
+In summary, a transaction in a DBMS is an event (such as reading or writing a value) that occurs on the database while maintaining the read-write isolation level.
+
+Examples:
+1. A user reads a row of data from a table, which belongs to a customer account with a specific ID (read). The transaction has SERIALIZABLE isolation level and it is started before performing the actual reading operation. Once done, the transaction is committed to ensure that other transactions cannot read the same record until after the current one completes (commit).
+2. A system administrator updates the customer account information in a database using an SQL script, which needs to be rolled back to revert the changes when there is no more need for the updated data (rollback). The transaction has serializable isolation level and it is started before performing any update operations. Once done, the rollback operation is committed, reverting all modified data to their previous state (commit)."
+4,Difference between DELETE and TRUNCATE?,"In the context provided, the instructions are as follows: ""Instruction for Analyzing the Context.""
+
+1. Analyze the definition of the word ""Deletion"" in context. The first sentence provides that it refers to ""undone by executing a deletion (resp. Suit insertion) operation"", which seems to be logical undo logging.
+
+2. Detail out the specifics of logical undo logging, such as the conditions required for undoing an insert or deleting a tuple.
+
+3. Give an example of how to use logical undo logging, i.e., a case where a deletion operation needs to be executed to undo its effect.
+
+4. Provide a step-by-step reasoning of logical undo logging, which involves executing the appropriate ""logical"" operations and releasing resources held during the execution.
+
+Overall, the instructions should provide a clear understanding of the meaning and use of the word ""Deletion"" in context."
+5,What is indexing?,"Yes, you have provided a detailed answer to the question ""What is indexing?"" in the context of a university student's assignment. The definition given is that indexing refers to organizing data by creating index files or tables that allow for quick access and search for specific data based on search keys. In this case, it could be the seaRCSearch key (which stands for Search Key) used to identify records with specified values in a certain attribute.
+
+The first step in understanding how indexing works is to understand how index files are structured. Index files contain entries or indexes for each record, where the index entry contains information about the specific value associated with that record's seaRCSearch key. The search key is usually made up of a combination of attributes that describe the records, such as name, age, and hometown.
+
+The second step in accessing data using indexing is to use the search keys (SEARCH KEYS). Whenever someone searches for a record with a specific value associated with the seaRCSearch key, the index file is used to quickly locate that record. The search key is then used to identify that specific record.
+
+In conclusion, indexing is an important concept in data organization and retrieval, especially when dealing with large datasets or complex data structures. By using indexes, users can access and analyze the data efficiently by searching for specific values or attributes related to a certain data set."
+6,What is deadlock?,"Certainly! Deadlock is a situation where one or more transactions are waiting for an unachievable resource, such as a lock, while other transactions are waiting to obtain the same resource. In our context, this can be seen when there are two processes trying to acquire locks on the same object at the same time in the Database Management System. These actions repeatedly block each other, leading to a deadlock situation. The key to handling deadlocks is to roll back one of the locked-down transactions to release its lock, thereby allowing the others to proceed with their actions. In our context, this could mean rolling back the transaction that was waiting for T3's lock on B, and releasing T4's lock on A. The potential for deadlock exists in most locking protocols, and deadlock detection algorithms can trigger repeatedly until one process achieves its objective or another prevents it from doing so."
+7,What is foreign key?,"Sure, here's an explanation of the definition and step-by-step reasonings for the foreign key in the context provided:
+
+1. Definition: A foreign key is a referential key used to link two tables together for retrieval purposes. It must be a primary key of one table, so the referring table must contain only such unique identifiers as exist for the referencing table. In other words, a foreign key exists between the base table and the referenced table if and only if the primary keys of both tables match.
+
+2. Detailed Explanation:
+- The document (metadata) provides the following information:
+  - Definition: A foreign key is a referential key used to link two tables together for retrieval purposes. It must be a primary key of one table, so the referring table must contain only such unique identifiers as exist for the referencing table. In other words, a foreign key exists between the base table and the referenced table if and only if the primary keys of both tables match.
+
+- Example:
+- CREATE TABLE table_name 1 (Column_name 1 data_type PRIMARY KEY, Column_name 2 data_type)
+- CREATE TABLE other_table_name 1 (Column_name 1 data_type PRIMARY KEY, Column_name 2 data_type)
+
+3. Step-by-step Reasonings:
+a. First, identify the foreign key in question: It is a primary key of one table, so the referring table must contain only such unique identifiers as exist for the referencing table.
+
+b. Analyze the document (metadata): The document (metadata) provides the following information on the foreign key: it must be a primary key of one table, so the referring table must contain only such unique identifiers as exist for the referencing table.
+
+c. Structural explanation:
+- Step 1: Detailed Explanation
+  - The relation r1 is also called the referencing relation of the foreign key dependency, and r2 is called the referenced relation of the foreign key. For example, the attribute dept name in instructor is a foreign key from insstrctor, referen'
+  - Step 2: Detailed Explanation
+    - The table_name column type is data_type PRIMARY KEY
+      - A primary key must be a unique identifier, so this indicates that the referencing table only contains unique identifiers.
+    - The other_table_name column type is data_type PRIMARY KEY
+      - Another primary key must be present in another_table_name, so this implies that the referring table also contains unique identifiers (i.e., a foreign key), indicating that these two tables are related by a foreign key.
+
+4. Example:
+- A student has multiple IDs, each unique and must not exist in more than one table. A teacher can have multiple IDs, but only one should be referenced from the other_table_name."
+8,What is 3NF?,"1. Definition: 
+    - ""R"" is the name of the table or relation being analyzed (e.g., ""Customer"" in the given material).
+    - ""A"" is a subset of R's attributes (columns) that are being examined (e.g., ""Name"", ""Age"", and ""Gender"" in the given material).
+    - ""X"" represents an attribute or key for which partial dependencies have been identified (i.e., ""Name"" is a partial dependency because it appears twice in A, but only once in R's attributes).
+    - ""Y"" represents an attribute or key for which transitive dependencies have been identified (i.e., ""Age"" and ""Gender"" are transitive dependencies because Age is dependent on both Gender and Name).
+2. Detailed Explaination:
+    1. Step 1: Analyzing the context carefully
+        - The given material provides a step-by-step explanation of the table being analyzed.
+        - The section ""Partial Dependencies"" and ""Transitive Depenencies"" illustrate how some attributes or keys can have partially dependent (or partial) relationships with other attributes or keys, while others can have transitive dependencies (i.e., they are related to each other in a chain).
+    2. Step 2: Structuring the answer as:
+        - Definition
+            - ""R"" is the name of the table being analyzed
+            - ""A"" is a subset of R's attributes that are being examined
+            - ""X"" represents an attribute or key for which partial dependencies have been identified (i.e., ""Name"" is a partial dependency because it appears twice in A)
+            - ""Y"" represents an attribute or key for which transitive dependencies have been identified (i.e., ""Age"" and ""Gender"" are transitive dependencies because Age is dependent on both Gender and Name)
+3. If the answer is not found in the context, respond with:
+    - Not available in provided material (relevant to the given material)
+    - Step 1: Analyzing the context carefully
+        - The given material provides a step-by-step explanation of the table being analyzed
+        - The section ""Partial Dependencies"" and ""Transitive Depenencies"" illustrate how some attributes or keys can have partially dependent (or partial) relationships with other attributes or keys, while others can have transitive dependencies (i.e., they are related to each other in a chain).
+    - Step 2: Structuring the answer as:
+        - Definition
+            - ""R"" is the name of the table being analyzed
+            - ""A"" is a subset of R's attributes that are being examined
+            - ""X"" represents an attribute or key for which partial dependencies have been identified (i.e., ""Name"" is a partial dependency because it appears twice in A)
+            - ""Y"" represents an attribute or key for which transitive dependencies have been identified (i.e., ""Age"" and ""Gender"" are transitive dependencies because Age is dependent on both Gender and Name)."
+9,When use B-tree vs Hash index?,"1. Definition:
+    A B+ tree is a type of indexing mechanism used to store and retrieve data efficiently. It uses pointers (known as ""leaf nodes"") to represent records or data elements, which are grouped together in a way that makes it easy to locate the required record based on its seaRCh-key value. This mechanism provides fast search, insertion, and deletion operations for large datasets.
+    
+2. Detailed Explaination:
+    The B+ tree uses a ""plus"" operator (operator +) to add nodes that are not already in the tree. The key point here is that this operator creates a new node with its parent as its left child and its right child as its right child. This ensures that each leaf node in the tree has an associated pointer to its parent (the node that contains it), and also allows the tree to be stored efficiently.
+    
+3. Explanation:
+    As for the Advantage of B+-tree index files, they automatically reorganize themselves with small, local changes, in the face of insertions and deletions. This means that when data is being added or removed from a B+-tree, only the relevant part of the tree needs to be updated - rather than the whole thing.
+    
+4. Disadvantage:
+    The disadvantage of B+-trees is extra insertion and deletion overhead, which can add up over time if you have a large dataset. However, in practice, this can often be offset by the efficiency gained from the B+-tree's ability to handle large datasets efficiently."
+10,What is primary key?,"In a Database Management System, a primary key is a property of the entire relation, rather than individual tuples. It represents a constraint on the real-world enterprise being modeled by selecting only one candidate key that cannot have the same value for any pair of distinct attributes at the same time. In SQL, a primary key is defined as a column or set of columns that uniquely identify a row within a table. A primary key must be chosen with care, as it can limit the range of values that can be assigned to each row. It is only one primary key that can be created for each table."
